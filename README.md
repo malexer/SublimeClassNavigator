@@ -2,7 +2,7 @@
 
 Class Navigator helps to quickly go to class defenition in a current file.
 
-It is using "Goto Symbol..." with some additional filtering.
+It is using "Goto Symbol..." under the hood with some additional filtering.
 
 Currently specific class detection is done for Python source only. All other
 sources will be trying to detect first-level items.
@@ -13,5 +13,7 @@ the `FILTERS` dict in the `ClassNavigator.py`.
 
 # Usage
 
-| Linux or Windows | [Ctrl]+[Shift]+[C] |
-| MacOS            | [⌘]+[Shift]+[C]   |
+version | shortcut
+---- | ----
+Linux or Windows | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+MacOS            | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
