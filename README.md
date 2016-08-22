@@ -1,6 +1,6 @@
 # Class Navigator
 
-Class Navigator helps to quickly go to class defenition in a current file.
+Class Navigator helps to quickly go to class definition in a current file.
 
 It is using "Goto Symbol..." under the hood with some additional filtering.
 
