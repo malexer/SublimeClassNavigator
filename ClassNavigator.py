@@ -35,12 +35,38 @@ class LazyList(UserList):
         return self.function(self.data[key])
 
 
+class StatusMessage(object):
+
+    KEY = 'ClassNavigator'
+
+    def __init__(self, sublime_view):
+        self.view = sublime_view
+        self.active = False
+
+    def show(self, message):
+        self.view.set_status(self.KEY, message)
+        self.active = True
+
+        sublime.set_timeout(self.clear, 5000)
+
+    def clear(self):
+        if self.active:
+            self.view.erase_status(self.KEY)
+            self.active = False
+
+
 class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.status = StatusMessage(sublime_view=self.view)
 
     def run(self, edit):
         filter_func = FILTERS.get(self.syntax_name, FILTERS[None])
 
         items = [item for item in self.view.symbols() if filter_func(item[1])]
+
+        self.status.clear()
 
         if items:
             self.locations, names = zip(*items)
@@ -56,6 +82,8 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
                 on_select=self.jump_to,
                 on_highlight=self.scroll_to,
             )
+        else:
+            self.status.show('ClassNavigator: no classes found')
 
     def get_index_of_closest_region(self, current_line, regions):
         """Get index of the item in `regions` which is closest to current
