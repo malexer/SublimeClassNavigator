@@ -96,6 +96,7 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
             function=lambda r: self.view.rowcol(r.begin())[0],
         )
 
+        # index of item which is >=
         index = bisect_left(regions_lines, current_line)
 
         if index == 0 or index == len(regions):
@@ -104,6 +105,7 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
         a = regions_lines[index - 1]
         b = regions_lines[index]
 
+        # find closest item among two
         if abs(current_line - a) < abs(current_line - b):
             return index - 1
         else:
