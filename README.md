@@ -8,7 +8,7 @@ Currently specific class detection is done for Python source only. All other
 sources will be trying to detect first-level items.
 
 Feel free to add more accurate class detection for other source types - check
-the `FILTERS` dict in the `ClassNavigator.py`.
+the `FILTERS` dict in the `ClassNavigator.py` or create the issue with details.
 
 
 # Usage
