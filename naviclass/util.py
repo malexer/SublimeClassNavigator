@@ -17,14 +17,19 @@ class LazyList(UserList):
     """List class with lazy access to items.
 
     Transformation ``function`` will be applied on access to the item.
+    Result will be cached.
     """
 
     def __init__(self, source_list, function):
         self.data = source_list
+        self.values = [None] * len(source_list)
         self.function = function
 
     def __getitem__(self, index):
-        return self.function(self.data[index])
+        if self.values[index] is None:
+            self.values[index] = self.function(self.data[index])
+
+        return self.values[index]
 
 
 class Config(UserDict):
@@ -65,10 +70,8 @@ class RegionList(object):
         # index of item which is >=
         index = bisect_left(self.region_lines, line_number)
 
-        if index >= len(self.regions):
-            return len(self.regions) - 1  # index of the last item
-        elif line_number == self.region_lines[index]:
-            # line_number is pointing straight at region beginning
+        if self.has_region(line_number):
+            # "=="" case: line_number is pointing straight at the region
             return index
         else:
             return index - 1
