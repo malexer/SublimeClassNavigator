@@ -46,8 +46,8 @@ MacOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt
 
 # Contributing
 
-It is using "Goto Symbol..." under the hood with some additional filtering
-defined in `naviclass.config`.
+Class Navigator is using "Goto Symbol..." under the hood with some additional
+filtering defined in `naviclass.config`.
 
 Currently class and method detection is tuned for Python source only.
 
