@@ -1,3 +1,13 @@
 [
-    {"keys": ["ctrl+shift+c"], "command": "class_navigator_go_to_class"}
+    {"keys": ["ctrl+shift+c"], "command": "class_navigator_go_to_class"},
+    {
+        "keys": ["super+alt+up"],
+        "command": "class_navigator_jump_function",
+        "args": {"jump_next": false}
+    },
+    {
+        "keys": ["super+alt+down"],
+        "command": "class_navigator_jump_function",
+        "args": {"jump_next": true}
+    }
 ]

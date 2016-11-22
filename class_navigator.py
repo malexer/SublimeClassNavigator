@@ -1,1 +1,1 @@
-from .naviclass import ClassNavigatorGoToClassCommand
+from .naviclass import *

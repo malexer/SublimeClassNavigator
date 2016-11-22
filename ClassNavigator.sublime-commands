@@ -2,5 +2,15 @@
     {
         "caption": "Class Navigator: Go to Class",
         "command": "class_navigator_go_to_class"
+    },
+    {
+        "caption": "Class Navigator: Go to previous Function",
+        "command": "class_navigator_jump_function",
+        "args": {"jump_next": false}
+    },
+    {
+        "caption": "Class Navigator: Go to next Function",
+        "command": "class_navigator_jump_function",
+        "args": {"jump_next": true}
     }
 ]
