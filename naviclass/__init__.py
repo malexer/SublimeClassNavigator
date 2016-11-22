@@ -1,5 +1,5 @@
 from .gotoclasscmd import ClassNavigatorGoToClassCommand
-from .jumpmethodcmd import ClassNavigatorJumpFunctionCommand
+from .jumpfunctioncmd import ClassNavigatorJumpFunctionCommand
 
 
 __all__ = (

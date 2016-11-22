@@ -6,7 +6,7 @@ from .util import RegionList
 class ClassNavigatorJumpFunctionCommand(ClassNavigatorGoToClassCommand):
 
     def run(self, edit, jump_next=True):
-        filter_func = config[self.syntax_name].method_filter
+        filter_func = config[self.syntax_name].function_filter
 
         method_items = [
             item for item in self.view.symbols()

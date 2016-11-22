@@ -62,9 +62,8 @@ class RegionList(object):
         return line_number == self.region_lines[index]
 
     def prev_region_index(self, line_number):
-        """Get index of the region which is located just before the
-        ``line_number`` or they are both pointing to the same
-        location (<=).
+        """Get the index of the region which is located on provided
+        ``line_number`` or just before it.
         """
 
         # index of item which is >=
@@ -77,7 +76,7 @@ class RegionList(object):
             return index - 1
 
     def closest_region_index(self, line_number):
-        """Get index of the region which is closest to the
+        """Get index of the region which is the closest one to provided
         ``line_number``.
         """
 
