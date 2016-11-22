@@ -54,8 +54,8 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
             self.view.set_viewport_position(self.start_position)
         else:
             position = sublime.Region(
-                self.filtered_regions[index].end(),
-                self.filtered_regions[index].end(),
+                self.filtered_regions[index].begin(),
+                self.filtered_regions[index].begin(),
             )
             self.view.sel().clear()
             self.view.sel().add(position)
