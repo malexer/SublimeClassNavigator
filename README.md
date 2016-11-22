@@ -38,7 +38,7 @@ Jump to previous or next function/method in a current file.
 or
 
 version | Go to previous | Go to next
----- | ----
+---- | ---- | ----
 Linux   | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
 Windows | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
 MacOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
