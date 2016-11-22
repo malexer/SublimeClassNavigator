@@ -14,11 +14,9 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
         self.status = StatusMessage(sublime_view=self.view)
 
     def run(self, edit):
-        filter_func = config[self.syntax_name].class_filter
-
         class_symbols = [
             item for item in self.view.symbols()
-            if filter_func(item[1])
+            if config[self.syntax_name].is_class(item[1])
         ]
 
         self.status.clear()
@@ -47,15 +45,19 @@ class ClassNavigatorGoToClassCommand(sublime_plugin.TextCommand):
 
         self.view.show_at_center(self.filtered_regions[index])
 
-    def jump_to(self, index):
-        """Jump to selected item: scroll screen and move cursor."""
+    def jump_to(self, index, cursor_position=0):
+        """Jump to selected item: scroll screen and move cursor.
+
+        Cursor will be positioned to ``cursor_position`` char number
+        in the line.
+        """
 
         if index < 0 or index >= len(self.filtered_regions):
             self.view.set_viewport_position(self.start_position)
         else:
             position = sublime.Region(
-                self.filtered_regions[index].begin(),
-                self.filtered_regions[index].begin(),
+                self.filtered_regions[index].begin() + cursor_position,
+                self.filtered_regions[index].begin() + cursor_position,
             )
             self.view.sel().clear()
             self.view.sel().add(position)
