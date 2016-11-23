@@ -31,12 +31,8 @@ class ClassNavigatorGoToClassCommand(ClassNavigatorBaseCmd):
 
         self.symbols[index].scroll()
 
-    def jump_to(self, index, cursor_position=0):
-        """Jump to selected item: scroll screen and move cursor.
-
-        Cursor will be positioned to ``cursor_position`` char number
-        in the line.
-        """
+    def jump_to(self, index):
+        """Jump to selected item: scroll screen and move cursor."""
 
         if index < 0 or index >= len(self.symbols):
             self.view.set_viewport_position(self.start_position)
