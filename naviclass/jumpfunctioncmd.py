@@ -1,47 +1,30 @@
+from .basecmd import ClassNavigatorBaseCmd
 from .config import config
-from .gotoclasscmd import ClassNavigatorGoToClassCommand
-from .util import RegionList
+from .symbol import SymbolList
 
 
-class ClassNavigatorJumpFunctionCommand(ClassNavigatorGoToClassCommand):
+class ClassNavigatorJumpFunctionCommand(ClassNavigatorBaseCmd):
 
     def run(self, edit, jump_next=True):
-        method_items = [
-            item for item in self.view.symbols()
-            if config[self.syntax_name].is_function(item[1])
-        ]
+        cfg = config[self.syntax_name]
+
+        self.symbols = SymbolList(sublime_view=self.view) \
+            .filter_by_name(func=cfg.is_function)
 
         self.status.clear()
 
-        if method_items:
-            self.filtered_regions, names = zip(*method_items)
+        if self.symbols:
+            try:
+                if jump_next:
+                    symbol = self.symbols.right_symbol(self.current_line)
+                else:
+                    symbol = self.symbols.left_symbol(self.current_line)
+            except IndexError:
+                # either trying to jump before first or after last function
+                return
 
-            regions = RegionList(self.filtered_regions, self.view)
-            index = regions.prev_region_index(self.current_line)
-
-            self.save_start_position()
-            if jump_next:
-                self.jump_to(
-                    index + 1,
-                    cursor_position=self.find_function_name(index + 1))
-            elif regions.has_region(self.current_line):
-                # located just on the region - jump to previous region
-                self.jump_to(
-                    index - 1,
-                    cursor_position=self.find_function_name(index - 1))
-            else:
-                # located in the middle of the region - jump to it's beginning
-                self.jump_to(
-                    index,
-                    cursor_position=self.find_function_name(index))
-
+            # find the name of the function in string an jump to it
+            func_name_index = cfg.index_of_function_name(symbol.line_text)
+            symbol.jump(cursor_offset=func_name_index)
         else:
             self.status.show('ClassNavigator: no function(s) found')
-
-    def find_function_name(self, region_index):
-        """Return index of function name in the string of provided region."""
-        if region_index < 0 or region_index >= len(self.filtered_regions):
-            return 0
-
-        line_str = self.view.substr(self.filtered_regions[region_index])
-        return config[self.syntax_name].index_of_function_name(line_str)
