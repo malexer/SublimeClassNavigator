@@ -16,9 +16,9 @@ class ClassNavigatorJumpFunctionCommand(ClassNavigatorBaseCmd):
         if self.symbols:
             try:
                 if jump_next:
-                    symbol = self.symbols.right_symbol(self.current_line)
+                    symbol = self.symbols.find_right(self.current_line)
                 else:
-                    symbol = self.symbols.left_symbol(self.current_line)
+                    symbol = self.symbols.find_left(self.current_line)
             except IndexError:
                 # either trying to jump before first or after last function
                 return

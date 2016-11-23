@@ -63,6 +63,7 @@ class SymbolList(object):
     def symbols(self, value):
         self._symbols = value
         # lazily calculate line number (locations) for each symbol
+        # and cache calculated results
         self._line_nums = LazyList(
             value, function=lambda symbol: symbol.line_number)
 
@@ -104,17 +105,15 @@ class SymbolList(object):
         else:
             return index
 
-    def left_symbol(self, line_number):
-        """Return the symbol which is on the given ``line_number`` or
-        just before it.
-        """
+    def find_left(self, line_number):
+        """Return the symbol which is just before the given ``line_number``."""
 
         # index of item which is >=
         index = bisect_left(self._line_nums, line_number)
 
         return self[index - 1]
 
-    def right_symbol(self, line_number):
+    def find_right(self, line_number):
         """Return the symbol which is just after the ``line_number``."""
 
         # index of item which is >=
