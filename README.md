@@ -25,7 +25,7 @@ or
 version | shortcut
 ---- | ----
 Linux or Windows | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
-MacOS            | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+macOS            | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
 
 
 ## Go to previous/next function
@@ -41,7 +41,7 @@ version | Go to previous | Go to next
 ---- | ---- | ----
 Linux   | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
 Windows | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
-MacOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
+macOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
 
 
 # Contributing
