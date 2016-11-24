@@ -1,8 +1,7 @@
-Class Navigator 1.1.0 changelog
-===============================
+Version 1.1.0
+~~~~~~~~~~~~~
 
-New Features
-------------
+New Features:
 
 * Added "Go to pevious/next Function". Switch to some python source and
   use:
