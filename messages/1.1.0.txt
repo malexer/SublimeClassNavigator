@@ -1,0 +1,10 @@
+Class Navigator 1.1.0 changelog
+===============================
+
+New Features
+------------
+
+* Added "Go to pevious/next Function". Switch to some python source and
+  use:
+  - Super/Win/⌘ + Alt + ↑
+  - Super/Win/⌘ + Alt + ↓
