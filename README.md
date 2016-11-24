@@ -1,7 +1,7 @@
 # Class Navigator
 
-Class Navigator helps to quickly jump between classes and functions/methods in a
-current file.
+Class Navigator helps to quickly jump between classes and functions/methods
+in a current file.
 
 
 # Install
@@ -55,4 +55,4 @@ For all other sources it is trying to detect first-level items for class and
 consider all items in "Goto Symbol..." as functions.
 
 Feel free to add more accurate detection for other source types - check
-the `naviclass/config.py`.
+the `naviclass/config.py` or create the issue with details.
