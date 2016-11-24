@@ -3,7 +3,7 @@ functions/methods in a current file.
 
 
 Quick start
-```````````
+~~~~~~~~~~~
 
 * Go to Class
     - Linux/Windows: Ctrl + Shift + C
