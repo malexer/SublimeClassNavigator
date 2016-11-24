@@ -41,7 +41,7 @@ version | Go to previous | Go to next
 ---- | ---- | ----
 Linux   | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Super</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
 Windows | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
-macOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↓</kbd>
+macOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>↓</kbd>
 
 
 # Contributing

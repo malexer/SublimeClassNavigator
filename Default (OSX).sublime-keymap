@@ -1,12 +1,12 @@
 [
     {"keys": ["super+shift+c"], "command": "class_navigator_go_to_class"},
     {
-        "keys": ["super+alt+up"],
+        "keys": ["super+alt+shift+up"],
         "command": "class_navigator_jump_function",
         "args": {"jump_next": false}
     },
     {
-        "keys": ["super+alt+down"],
+        "keys": ["super+alt+shift+down"],
         "command": "class_navigator_jump_function",
         "args": {"jump_next": true}
     }

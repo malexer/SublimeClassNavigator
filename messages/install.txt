@@ -14,10 +14,10 @@ Quick start
 
 * Go to previous Function
     - Linux: Super + Alt + ↑
-    - macOS: ⌘ + Alt + ↑
+    - macOS: ⌘ + Alt + Shift + ↑
     - Windows: Win + Alt + ↑
 
 * Go to next Function
     - Linux: Super + Alt + ↓
-    - macOS: ⌘ + Alt + ↓
+    - macOS: ⌘ + Alt + Shift + ↓
     - Windows: Win + Alt + ↓

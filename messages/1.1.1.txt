@@ -1,0 +1,9 @@
+Version 1.1.1
+~~~~~~~~~~~~~
+
+Changed:
+
+* macOS only: changed shortcuts for "Go to previous/next Function" to avoid
+  conflict with default shortcuts of Sublime Text:
+  - ⌘ + Alt + Shift + ↑
+  - ⌘ + Alt + Shift + ↓

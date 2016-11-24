@@ -3,7 +3,7 @@ Version 1.1.0
 
 New Features:
 
-* Added "Go to pevious/next Function". Switch to some python source and
+* Added "Go to previous/next Function". Switch to some python source and
   use:
   - Super/Win/⌘ + Alt + ↑
   - Super/Win/⌘ + Alt + ↓
