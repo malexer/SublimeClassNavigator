@@ -1,5 +1,7 @@
 # Class Navigator
 
+[![Build Status](https://travis-ci.org/malexer/SublimeClassNavigator.svg?branch=master)](https://travis-ci.org/malexer/SublimeClassNavigator)
+
 Class Navigator helps to quickly jump between classes and functions/methods
 in a current file.
 

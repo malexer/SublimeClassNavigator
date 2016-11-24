@@ -1,0 +1,7 @@
+Version 1.1.2
+~~~~~~~~~~~~~
+
+Fixed:
+
+* Position on class name when using "Go to Class" command.
+* Refined positioning.
