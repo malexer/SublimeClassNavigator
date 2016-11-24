@@ -1,6 +1,6 @@
 import sublime_plugin
 
-from .util import StatusMessage
+from .statusbar import StatusMessage
 
 
 class ClassNavigatorBaseCmd(sublime_plugin.TextCommand):

@@ -37,4 +37,9 @@ class ClassNavigatorGoToClassCommand(ClassNavigatorBaseCmd):
         if index < 0 or index >= len(self.symbols):
             self.view.set_viewport_position(self.start_position)
         else:
-            self.symbols[index].jump()
+            symbol = self.symbols[index]
+            cfg = config[self.syntax_name]
+
+            # find the name of the class in string an jump to it
+            class_name_index = cfg.index_of_class_name(symbol.line_text)
+            self.symbols[index].jump(cursor_offset=class_name_index)

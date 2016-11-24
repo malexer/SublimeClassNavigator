@@ -1,1 +1,2 @@
-from .naviclass import *
+from .naviclass.gotoclasscmd import ClassNavigatorGoToClassCommand
+from .naviclass.jumpfunctioncmd import ClassNavigatorJumpFunctionCommand
