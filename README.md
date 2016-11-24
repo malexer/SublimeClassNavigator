@@ -1,6 +1,6 @@
 # Class Navigator
 
-Class Navigator helps to quickly jump between classes and their methods in a
+Class Navigator helps to quickly jump between classes and functions/methods in a
 current file.
 
 
@@ -49,10 +49,10 @@ MacOS   | <kbd>⌘</kbd>+<kbd>Alt</kbd>+<kbd>↑</kbd> | <kbd>⌘</kbd>+<kbd>Alt
 Class Navigator is using "Goto Symbol..." under the hood with some additional
 filtering defined in `naviclass.config`.
 
-Currently class and method detection is tuned for Python source only.
+Currently class and function detection is tuned for Python source only.
 
 For all other sources it is trying to detect first-level items for class and
-consider all items in "Goto Symbol..." as methods.
+consider all items in "Goto Symbol..." as functions.
 
-Feel free to add more accurate class detection for other source types - check
+Feel free to add more accurate detection for other source types - check
 the `naviclass/config.py`.
