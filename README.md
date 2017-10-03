@@ -26,8 +26,9 @@ or
 
 version | shortcut
 ---- | ----
-Linux or Windows | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
-macOS            | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+Linux   | <kbd>Super</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+Windows | <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
+macOS   | <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
 
 
 ## Go to previous/next function

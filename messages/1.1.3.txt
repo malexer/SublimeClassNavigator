@@ -1,0 +1,9 @@
+Version 1.1.3
+~~~~~~~~~~~~~
+
+Changed:
+
+* default key bindings for "Go to Class" to avoid conflict with other
+  plugins:
+  - Linux: Super + Shift + C
+  - Win: Win + Shift + C

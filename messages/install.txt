@@ -6,8 +6,9 @@ Quick start
 ~~~~~~~~~~~
 
 * Go to Class
-    - Linux/Windows: Ctrl + Shift + C
+    - Linux: Super + Shift + C
     - macOS: ⌘ + Shift + C
+    - Windows: Win + Shift + C
 
 * Go to previous Function
     - Linux: Super + Alt + ↑
