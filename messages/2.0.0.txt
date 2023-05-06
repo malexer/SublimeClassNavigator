@@ -1,0 +1,8 @@
+Version 2.0.0
+~~~~~~~~~~~~~
+
+Fixed:
+
+* Plugin is now working correctly in Sublime Text 4.
+* [BREAKING CHANGES] Sublime Text 2/3 is not supported for 2.x version.
+  It might work, but I have not tested it.
