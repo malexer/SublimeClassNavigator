@@ -8,7 +8,7 @@ class DefaultConfig(object):
 
     def is_class(self, symbol_item):
         """Check if provided ``symbol_item`` is a name of the class."""
-        return not symbol_item.startswith(' ')
+        return not symbol_item.name.startswith(' ')
 
     def index_of_class_name(self, line_str):
         """Return index of class name given the line string."""
@@ -35,8 +35,11 @@ class PythonConfig(DefaultConfig):
             return None
 
     def is_class(self, symbol_item):
-        """Check if provided ``symbol_item`` is a name of the class."""
-        return '(…)' not in symbol_item and '(' in symbol_item
+        """Check if provided ``symbol_item`` has name of the class."""
+        return (
+            symbol_item.line_text.startswith("class ")
+            or " class " in symbol_item.line_text
+        )
 
     def index_of_class_name(self, line_str):
         """Return index of class name given the line string."""
@@ -44,7 +47,10 @@ class PythonConfig(DefaultConfig):
 
     def is_function(self, symbol_item):
         """Check if provided ``symbol_item`` is a name of the function."""
-        return '(…)' in symbol_item
+        return (
+            symbol_item.line_text.startswith("def ")
+            or " def " in symbol_item.line_text
+        )
 
     def index_of_function_name(self, line_str):
         """Return index of function name given the line string."""

@@ -11,6 +11,7 @@ class Symbol(object):
         self.name = name
         self.region = region
         self.sublime_view = sublime_view
+        self._line_region = sublime_view.line(region)
 
     @property
     def line_number(self):
@@ -20,7 +21,7 @@ class Symbol(object):
     @property
     def line_text(self):
         """Return this symbol line from sublime_view as a string."""
-        return self.sublime_view.substr(self.region)
+        return self.sublime_view.substr(self._line_region)
 
     def scroll(self):
         """Scroll view to this symbol."""
@@ -29,7 +30,7 @@ class Symbol(object):
     def jump(self, cursor_offset=0):
         """Jump to this symbol: scroll view and move cursor."""
 
-        start_location = self.region.begin() + cursor_offset
+        start_location = self._line_region.begin() + cursor_offset
         position = sublime.Region(start_location, start_location)
 
         self.sublime_view.sel().clear()
@@ -40,12 +41,16 @@ class Symbol(object):
 
 class SymbolList(object):
 
-    def __init__(self, sublime_view):
+    def __init__(self, sublime_view, symbols=None):
         self.view = sublime_view
-        self.symbols = [
-            Symbol(name=s[1], region=s[0], sublime_view=sublime_view)
-            for s in self.view.symbols()  # list of tuples (Region, str)
-        ]
+
+        if symbols is None:
+            self.symbols = [
+                Symbol(name=s[1], region=s[0], sublime_view=sublime_view)
+                for s in self.view.symbols()  # list of tuples (Region, str)
+            ]
+        else:
+            self.symbols = symbols
 
     def __getitem__(self, index):
         if index < 0:
@@ -77,10 +82,13 @@ class SymbolList(object):
             return False
         return line_number == self._line_nums[index]
 
-    def filter_by_name(self, func):
-        """Filter symbols by name."""
-        self.symbols = [s for s in self.symbols if func(s.name)]
-        return self
+    def filter(self, func):
+        """Filter symbols by function."""
+        cls = type(self)
+        return cls(
+            sublime_view=self.view,
+            symbols=[s for s in self.symbols if func(s)],
+        )
 
     @property
     def names(self):

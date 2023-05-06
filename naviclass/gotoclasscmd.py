@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from .basecmd import ClassNavigatorBaseCmd
-from .config import config
 from .symbol import SymbolList
 
 
@@ -9,7 +8,7 @@ class ClassNavigatorGoToClassCommand(ClassNavigatorBaseCmd):
 
     def run(self, edit):
         self.symbols = SymbolList(sublime_view=self.view) \
-            .filter_by_name(func=config[self.syntax_name].is_class)
+            .filter(func=lambda symbol: self.syntax_config.is_class(symbol))
 
         self.status.clear()
 
@@ -38,8 +37,7 @@ class ClassNavigatorGoToClassCommand(ClassNavigatorBaseCmd):
             self.view.set_viewport_position(self.start_position)
         else:
             symbol = self.symbols[index]
-            cfg = config[self.syntax_name]
 
             # find the name of the class in string an jump to it
-            class_name_index = cfg.index_of_class_name(symbol.line_text)
+            class_name_index = self.syntax_config.index_of_class_name(symbol.line_text)
             self.symbols[index].jump(cursor_offset=class_name_index)
