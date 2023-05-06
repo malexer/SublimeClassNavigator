@@ -1,5 +1,6 @@
 import sublime_plugin
 
+from .config import config
 from .statusbar import StatusMessage
 
 
@@ -23,9 +24,14 @@ class ClassNavigatorBaseCmd(sublime_plugin.TextCommand):
         return 0
 
     @property
-    def syntax_name(self):
+    def _syntax_name(self):
         """Get current syntax name."""
         selection = self.view.sel()
         if selection:
             syntax_scope = self.view.scope_name(selection[0].begin())
             return syntax_scope.split(' ')[0]
+
+    @property
+    def syntax_config(self):
+        """Get current syntax config."""
+        return config[self._syntax_name]
